@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-navy: #0d315c;
+    --brand-navy-dark: #082244;
+    --brand-green: #019e6e;
+    --brand-green-hover: #10bb82;
+    --brand-amber: #ffaf3a;
+    --brand-amber-hover: #e8971f;
+  }
+
+  body {
+    color: #1e293b;
+    background-color: #ffffff;
+    font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-outfit), sans-serif;
+  }
+}
+
+/* SMRU Cut-Corner Polygon Utilities */
+.cut-corner-badge {
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 8px));
+}
+
+.cut-corner-card {
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+.cut-corner-hero {
+  clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 18px, 100% 100%, 28px 100%, 0 calc(100% - 22px));
+}
+
+.cut-corner-panel {
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 12px, 100% 100%, 18px 100%, 0 calc(100% - 14px));
+}
+
+.cut-corner-underline {
+  clip-path: polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
+}
+
+/* SMRU Typography & Layout Components */
+.smru-container {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .smru-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.smru-section {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .smru-section {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+.smru-title {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(1.85rem, 4.5vw, 3.5rem);
+  line-height: 1.1;
+  font-weight: 900;
+  color: #0d315c;
+  text-align: center;
+  letter-spacing: -0.025em;
+}
+
+.smru-sub {
+  margin-top: 1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.125rem);
+  line-height: 1.65;
+  color: #4b5563;
+  text-align: center;
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.smru-h1 {
+  font-family: var(--font-cinzel), serif;
+  font-size: clamp(2.25rem, 5vw, 4.25rem);
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+/* Marquee Ticker Track */
+.smru-global-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: smruGlobalTickerScroll 32s linear infinite;
+  will-change: transform;
+}
+
+.smru-global-ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes smruGlobalTickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.smru-global-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  margin-right: 2.5rem;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #0d315c;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #019e6e;
+}
